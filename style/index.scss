@@ -142,7 +142,6 @@ max-height:400px;
 .textfinal{
     text-align: center;
     justify-content: center;
-    padding: 50px 0px 0px 0px;
 }
 ////////////////////////        Footer   ////////////////////////////////////////
 
@@ -188,6 +187,7 @@ max-height:400px;
         margin-right: 100px;
 
         img{
+
             max-width: 80px;
             margin: 20px;
         }
@@ -209,14 +209,15 @@ max-height:400px;
 .pagetarif{
     text-align: center;
     .textfinal{
-        display: none;
+        margin-top: 50px;
     }
 }
 .cadre{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
+    flex-direction: column;
 }
 
 .tarif-container {
@@ -282,8 +283,8 @@ p {
     }
     .grid-item img {
         width: 100%;
-        height: auto;
-        display: block;
+        height: 300px;
+        object-fit: cover; /* Remplit le conteneur tout en conservant le ratio de l'image */
     }
     .description {
         padding: 15px;
@@ -362,13 +363,38 @@ p {
 /// 
 /// 
 /// 
-
-@media screen and (max-width: 1100px) {
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        gap: 20px;
+@media screen and (max-width: 840px) {
+    .part1 .imgsalon{
+        width: 80%;
+        margin-top: 30px;
+        margin: 20px;
     }
+        .part2 .blocongle {
+            flex-direction: column;
+            margin: 20px;
+        }
+        .part3 .blocprothesiste {
+            flex-direction: column;
+            margin: 20px;
+            align-items: center;
+        }
+        .imgprothesiste {
+            max-width: 70%;
+            height: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .part1 p, .part2 .blocongle p, .part3 .blocprothesiste p {
+            margin: 0 20px;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        .textfinal{
+            margin-top: 50px;
+        
+                }
+}
+@media screen and (max-width: 1100px) {
     
     .footercontainer .bloccontainer {
         display: flex;
@@ -376,7 +402,10 @@ p {
         align-items: center; /* Centrer les éléments horizontalement */
         .logo{
             margin: 0;
-        }
+                h2{
+                    display: none;
+                }
+            }
     }
 
 }
@@ -393,78 +422,44 @@ p {
         margin-top: 30px;
         margin-bottom: 30px;
     }
-
-
-    .contact {
-        display: none;
-    }
     .pagetarif .textfinal{
         display: block;
     }
     .containerGall     .textfinal{display: block;}
 }
 @media screen and (max-width: 768px) {
-    .pagetarif .cadre .tarif-container{
-        margin-top: 50px;
-    }
     .navigation {
         flex-direction: column;
     }
-
     .navigation li {
         margin: 10px 0;
     }
-
     .headercontainer .imgaccueil {
         height: 200px;
         margin: 20px 0px 10px 0px;
-    }
-
-    .part1 p, .part2 .blocongle p, .part3 .blocprothesiste p {
-        margin: 0 20px;
-        padding-right: 0;
-        padding-left: 0;
-    }
-.part1 .imgsalon{
-    width: 80%;
-    margin-top: 30px;
-}
-    .part2 .blocongle {
-        flex-direction: column;
-        margin: 20px;
-    }
-
-    .part3 .blocprothesiste {
-        flex-direction: column;
-        margin: 20px;
-align-items: center;
-    }
-
-    .imgprothesiste {
-        max-width: 70%;
-        height: auto;
-        margin-top: 30px;
-        margin-bottom: 30px;
     }
     .bloccontainer{
         display: flex;
         flex-direction: row;
     }
-
-
+    .footercontainer{
+        .droits{
+            font-size: small;
+        }
+    }
+    .textfinal{
+        margin-top: 100px;
+    
+            }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 505px) {
     .navigation li {
         margin: 5px 0;
     }
 
     .navigation .lien {
         font-size: 16px;
-    }
-
-    .headercontainer .imgaccueil {
-        height: 150px;
     }
 
     .part1 p, .part2 .blocongle p, .part3 .blocprothesiste p {
@@ -474,5 +469,15 @@ align-items: center;
     .part2, .part3 {
         margin-top: 50px;
     }
-
+    .pagetarif{
+        .cadre{
+            margin-bottom: 50px;
+        }
+    }
+    .footercontainer .bloccontainer{
+        margin: 0;
+        .logo{
+            margin: 0;
+        }
+        }
 }

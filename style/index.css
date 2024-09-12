@@ -139,7 +139,6 @@ body p, html p {
 .textfinal {
   text-align: center;
   justify-content: center;
-  padding: 50px 0px 0px 0px;
 }
 
 .footercontainer {
@@ -198,14 +197,14 @@ body p, html p {
   text-align: center;
 }
 .pagetarif .textfinal {
-  display: none;
+  margin-top: 50px;
 }
 
 .cadre {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex-direction: column;
 }
 
 .tarif-container {
@@ -274,8 +273,9 @@ p {
 }
 .containerstyle .grid-item img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover; /* Remplit le conteneur tout en conservant le ratio de l'image */
 }
 .containerstyle .description {
   padding: 15px;
@@ -352,65 +352,11 @@ p {
   display: none;
 }
 
-@media screen and (max-width: 1100px) {
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    gap: 20px;
-  }
-  .footercontainer .bloccontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrer les éléments horizontalement */
-  }
-  .footercontainer .bloccontainer .logo {
-    margin: 0;
-  }
-}
-@media screen and (max-width: 1300px) {
-  .part3 .blocprothesiste {
-    flex-direction: column;
-    margin: 20px;
-    align-items: center;
-  }
-  .part3 .blocprothesiste .imgprothesiste {
-    max-width: 300px;
-    height: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  .contact {
-    display: none;
-  }
-  .pagetarif .textfinal {
-    display: block;
-  }
-  .containerGall .textfinal {
-    display: block;
-  }
-}
-@media screen and (max-width: 768px) {
-  .pagetarif .cadre .tarif-container {
-    margin-top: 50px;
-  }
-  .navigation {
-    flex-direction: column;
-  }
-  .navigation li {
-    margin: 10px 0;
-  }
-  .headercontainer .imgaccueil {
-    height: 200px;
-    margin: 20px 0px 10px 0px;
-  }
-  .part1 p, .part2 .blocongle p, .part3 .blocprothesiste p {
-    margin: 0 20px;
-    padding-right: 0;
-    padding-left: 0;
-  }
+@media screen and (max-width: 840px) {
   .part1 .imgsalon {
     width: 80%;
     margin-top: 30px;
+    margin: 20px;
   }
   .part2 .blocongle {
     flex-direction: column;
@@ -427,25 +373,89 @@ p {
     margin-top: 30px;
     margin-bottom: 30px;
   }
+  .part1 p, .part2 .blocongle p, .part3 .blocprothesiste p {
+    margin: 0 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .textfinal {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .footercontainer .bloccontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer les éléments horizontalement */
+  }
+  .footercontainer .bloccontainer .logo {
+    margin: 0;
+  }
+  .footercontainer .bloccontainer .logo h2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .part3 .blocprothesiste {
+    flex-direction: column;
+    margin: 20px;
+    align-items: center;
+  }
+  .part3 .blocprothesiste .imgprothesiste {
+    max-width: 300px;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .pagetarif .textfinal {
+    display: block;
+  }
+  .containerGall .textfinal {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+  }
+  .navigation li {
+    margin: 10px 0;
+  }
+  .headercontainer .imgaccueil {
+    height: 200px;
+    margin: 20px 0px 10px 0px;
+  }
   .bloccontainer {
     display: flex;
     flex-direction: row;
   }
+  .footercontainer .droits {
+    font-size: small;
+  }
+  .textfinal {
+    margin-top: 100px;
+  }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 505px) {
   .navigation li {
     margin: 5px 0;
   }
   .navigation .lien {
     font-size: 16px;
   }
-  .headercontainer .imgaccueil {
-    height: 150px;
-  }
   .part1 p, .part2 .blocongle p, .part3 .blocprothesiste p {
     margin: 0 10px;
   }
   .part2, .part3 {
     margin-top: 50px;
+  }
+  .pagetarif .cadre {
+    margin-bottom: 50px;
+  }
+  .footercontainer .bloccontainer {
+    margin: 0;
+  }
+  .footercontainer .bloccontainer .logo {
+    margin: 0;
   }
 }/*# sourceMappingURL=index.css.map */
